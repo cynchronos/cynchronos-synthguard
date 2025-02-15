@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 from app.home import home
 from app.deepfake_analyzer import deepfake_analyzer
-from app.settings import settings
+from app.about import about
 
 st.set_page_config(page_title="Cynchronos SynthGuard", layout="wide")
 
@@ -12,8 +12,8 @@ def main():
     with st.sidebar:
         sidebar = option_menu(
             "Cynchronos SynthGuard",
-            ["Home", "DeepFake Analyzer", "Settings"],
-            icons=["house", "vignette", "gear"],
+            ["Home", "DeepFake Analyzer", "About"],
+            icons=["house", "vignette", "info-circle"],
             menu_icon="opencollective",
             default_index=0,
             key="sidebar",
@@ -24,11 +24,14 @@ def main():
         )
 
     if sidebar == "Home":
-        home()
+        page = st.navigation([st.Page(home)])
+        page.run()
     elif sidebar == "DeepFake Analyzer":
-        deepfake_analyzer()
-    elif sidebar == "Settings":
-        settings()
+        page = st.navigation([st.Page(deepfake_analyzer)])
+        page.run()
+    elif sidebar == "About":
+        page = st.navigation([st.Page(about)])
+        page.run()
 
 
 if __name__ == "__main__":
