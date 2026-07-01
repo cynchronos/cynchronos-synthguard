@@ -55,11 +55,10 @@ Upon successful initialization, the application will be accessible via the defin
 *   `app/`: Contains the core application logic.
     *   `components/`: Modular UI components and the main analysis pipeline execution handler.
     *   `utils/`: Core processing scripts, including media manipulation and model inference functions.
-*   `modules/`: Stores serialized model weights and pre-trained classifiers.
-    *   `haarcascade_frontalface_default.xml`: Pre-trained classifier for facial ROI extraction.
-    *   `mesonet-v1-face.keras`: Serialized MesoNet model weights.
-    *   `mesonet-v1-wide.keras`: Serialized MesoNet model weights (wide variant).
-*   `media-temp/`: Ephemeral storage directory for processing uploaded files and generating output artifacts.
+*   `modules/`: Stores serialized model weights and pre-trained classifiers. *(Note: This directory is excluded from version control. You must create it and download the models here manually).*
+    *   `haarcascade_frontalface_default.xml`: Pre-trained classifier for facial ROI extraction (Available on the [official OpenCV GitHub repository](https://github.com/opencv/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml)).
+    *   `mesonet-v1-face.keras`: Serialized MesoNet model weights (Available on [Hugging Face](https://huggingface.co/cynchronos/SynthGuard-MesoNet-1.0/blob/main/mesonet-v1-face.keras)).
+*   `media-temp/`: Ephemeral storage directory for processing uploaded files and generating output artifacts. *(Note: This directory is automatically created at runtime and excluded from version control).*
 
 ## Model Configuration & Hosting
 
